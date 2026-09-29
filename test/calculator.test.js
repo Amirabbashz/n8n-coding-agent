@@ -4,7 +4,8 @@ const assert = require('node:assert/strict');
 const {
   add,
   subtract,
-  multiply
+  multiply,
+  divide
 } = require('../src/calculator');
 
 test('add works', () => {
@@ -17,4 +18,22 @@ test('subtract works', () => {
 
 test('multiply works', () => {
   assert.equal(multiply(4, 3), 12);
+});
+
+test('divide works', () => {
+  assert.equal(divide(10, 2), 5);
+});
+
+test('divide works with decimals', () => {
+  assert.equal(divide(7, 2), 3.5);
+});
+
+test('divide by zero throws the expected error', () => {
+  assert.throws(
+    () => divide(10, 0),
+    {
+      name: 'Error',
+      message: 'Cannot divide by zero'
+    }
+  );
 });
