@@ -1,8 +1,0 @@
-{
-  "name": "n8n-coding-agent",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "test": "node --test"
-  }
-}
